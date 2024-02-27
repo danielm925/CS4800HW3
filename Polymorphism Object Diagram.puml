@@ -1,0 +1,24 @@
+@startuml
+!pragma layout smetana
+
+object "ship1:Ship" as ship1 {
+    shipName = "Titanic"
+    yearBuilt = "March31st,1909"
+}
+
+object "ship2:Ship" as ship2a {
+    shipName = "MVGemini"
+}
+object "ship2:CruiseShip" as ship2b {
+    maxNumberPassengers = "100"
+}
+ship2a <|-- ship2b
+
+object "ship3:Ship" as ship3a {
+    shipName = "EverGiven"
+}
+object "ship3:CargoShip" as ship3b {
+    cargoCapacityInTonnage = "220940"
+}
+ship3a <|-- ship3b
+@enduml

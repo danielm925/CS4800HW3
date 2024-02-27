@@ -1,0 +1,32 @@
+@startuml
+!pragma layout smetana
+
+class Folder
+{
+    name: String
+    subfolders: Folder[*]
+    files: File[*]
+
+    Folder()
+    getName()
+    setName(String name)
+    removeSubfolder(String subFolderName)
+    addSubfolder(String subFolderName)
+    getSubfolder(String subFolderName)
+    removeFile(File file)
+    addFile(String fileName)
+    toString()
+    printFolderContents()
+}
+
+class File
+{
+    name: String
+
+    File(String name)
+    getName()
+    setName(String name)
+    toString()
+}
+Folder *-- File
+@enduml

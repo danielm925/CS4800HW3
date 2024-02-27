@@ -1,0 +1,65 @@
+@startuml
+!pragma layout smetana
+
+class Employee
+{
+    firstName: String
+    lastName: String
+    socialSecurityNumber: String
+
+    getFirstName()
+    setFirstName(String firstName)
+    getLastName()
+    setLastName(String lastName)
+    getSocialSecurityNumber()
+    setSocialSecurityNumber(String SocialSecurityNumber)
+    toString()
+
+}
+
+class SalariedEmployee
+{
+    weeklySalary: int
+
+    getWeeklySalary()
+    setWeeklySalary(int weeklySalary)
+    toString()
+}
+Employee <|-- SalariedEmployee
+
+class HourlyEmployee
+{
+    wage: int
+    hoursWorked: int
+
+    getWage()
+    setWage(int wage)
+    getHoursWorked()
+    setHoursWorked(int hoursWorked)
+    toString()
+}
+Employee <|-- HourlyEmployee
+
+class CommissionEmployee
+{
+    commissionRate: int
+    grossSales: int
+
+    getCommissionRate()
+    setCommissionRate(int commissionRate)
+    getGrossSales()
+    setGrossSales(int grossSales)
+    toString()
+}
+Employee <|-- CommissionEmployee
+
+class BaseEmployee
+{
+    baseSalary: int
+
+    getBaseSalary()
+    setBaseSalary(int baseSalary)
+    toString()
+}
+Employee <|-- BaseEmployee
+@enduml

@@ -1,0 +1,52 @@
+@startuml
+!pragma layout smetana
+
+class Course
+{
+    name: String
+    instructors: Instructor[*]
+    textbooks: Textbook[*]
+
+    getName()
+    setName(String name)
+    getInstructors()
+    setInstructor(Instructor instructors)
+    getTextbooks()
+    setTextbooks(Textbook textbooks)
+    toString()
+    printCourse()
+
+}
+
+class Instructor
+{
+    firstName: String
+    lastName: String
+    officeNumber: String
+
+    getFirstName()
+    setFirstName(String firstName)
+    getLastName()
+    setLastName(String lastName)
+    getOfficeNumber()
+    setOfficeNumber(String officeNumber)
+    toString()
+}
+Course o-- Instructor
+
+class Textbook
+{
+    title: String
+    author: String
+    publisher: String
+
+    getTitle()
+    setTitle(String title)
+    getAuthor()
+    setAuthor(String author)
+    getPublisher()
+    setPublisher(String publisher)
+    toString()
+}
+Course o-- Textbook
+@enduml

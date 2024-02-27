@@ -1,0 +1,37 @@
+@startuml
+!pragma layout smetana
+
+class Ship
+{
+    shipName: String
+    yearBuilt: String
+
+    getShipName()
+    setShipName(String shipName)
+    getYearBuilt()
+    setYearBuilt(String yearBuilt)
+    toString()
+    printShip()
+
+}
+
+class CargoShip
+{
+    cargoCapacityInTonnage: int
+
+    getCargoCapacityInTonnage()
+    setCargoCapacityInTonnage(int cargoCapacityInTonnage)
+    toString()
+}
+Ship <|-- CargoShip
+
+class CruiseShip
+{
+    maxNumberPassengers: int
+
+    getMaxNumberPassengers()
+    setMaxNumberPassengers(int maxNumberPassengers)
+    toString()
+}
+Ship <|-- CruiseShip
+@enduml

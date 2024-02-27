@@ -1,0 +1,70 @@
+@startuml
+!pragma layout smetana
+
+class Folder
+{
+    name: String
+    subfolders: Folder[*]
+    files: File[*]
+
+    Folder()
+    getName()
+    setName(String name)
+    removeSubfolder(String subFolderName)
+    addSubfolder(String subFolderName)
+    getSubfolder(String subFolderName)
+    removeFile(File file)
+    addFile(String fileName)
+    toString()
+    printFolderContents()
+}
+
+object "demo1:Folder" as demo1 {
+    name = "CS"
+}
+
+object "Source Files:Folder" as SourceFiles {
+    name = "Source Files"
+}
+demo1 *-- SourceFiles
+
+object "Include Path:Folder" as IncludePath {
+    name = "Include path"
+}
+demo1 *-- IncludePath
+
+object "Remote Files:Folder" as RemoteFiles {
+    name = "Remote Files"
+}
+demo1 *-- RemoteFiles
+
+object ".phalcon:Folder" as phalcon {
+    name = ".phalcon"
+}
+SourceFiles *-- phalcon
+
+object "cache:Folder" as cache {
+    name = "cache"
+}
+SourceFiles *-- cache
+
+object "public:Folder" as public {
+    name = "public"
+}
+SourceFiles *-- public
+
+object ".htaccess:File" as htaccess {
+    name = ".htaccess"
+}
+SourceFiles *-- htaccess
+
+object ".htrouter.php:File" as htroutephp {
+    name = ".htrouter"
+}
+SourceFiles *-- htroutephp
+
+object "index.html:File" as indexhtml {
+    name = "index.html"
+}
+SourceFiles *-- indexhtml
+@enduml
